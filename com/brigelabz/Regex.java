@@ -33,5 +33,16 @@ public class Regex {
                 System.out.println("false");
             }
         }
-    }
+        public  void validContactNumber(){
+
+                Pattern pattern = Pattern.compile("^[0-9]{1,2}\\s{1}[0-9]{10}$");
+                Matcher matcher = pattern.matcher("91 4567890987");
+                if (matcher.matches()){
+                    System.out.println("valid");
+                }else {
+                    System.out.println("invalid");
+                }
+            }
+        }
+
 
