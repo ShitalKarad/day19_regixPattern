@@ -1,5 +1,6 @@
 package com.brigelabz;
 
+import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -74,6 +75,36 @@ public class Regex {
             System.out.println("true");
         } else {
             System.out.println("false");
+        }
+    }
+    public void validPasswordRule4() {
+     Pattern pattern = Pattern.compile("^(?=.*[0-9])"
+            + "(?=.*[a-z])(?=.*[A-Z])"
+            + "(?=.*[@#$%^&+=])"
+            + "(?=\\S+$).{8,20}$");
+        Matcher matcher = pattern.matcher("Shital@123");
+        if (matcher.matches()){
+            System.out.println("true");
+        }else {
+            System.out.println("false");
+        }
+    }
+    public  void emailAllPattern(){
+        ArrayList<String> emails = new ArrayList<String>();
+        emails.add("abc-100@yahoo.com");
+        emails.add(" abc@yahoo.com,");
+        emails.add("abc.100@yahoo.com");
+        emails.add("abc111@abc.com");
+        emails.add("abc.100@abc.com.au");
+        emails.add("abc@1.com,");
+        //invalid emails
+        emails.add(".abc123#gmail.a");
+        emails.add("abc@*@gmail.com ");
+        String regex = "^(.+)@(.+)$";
+        Pattern pattern = Pattern.compile(regex);
+        for(String email : emails){
+            Matcher matcher = pattern.matcher(email);
+            System.out.println(email +" : "+ matcher.matches()+"\n");
         }
     }
 }
