@@ -23,4 +23,15 @@ public class Regex {
             System.out.println("invalid");
         }
     }
-}
+    public void  validEmail(){
+
+            Pattern pattern = Pattern.compile("^(.+)@(.+)$");
+            Matcher matcher = pattern.matcher("shitalkarad24@gmail.com");
+            if (matcher.matches()){
+                System.out.println("true");
+            }else {
+                System.out.println("false");
+            }
+        }
+    }
+

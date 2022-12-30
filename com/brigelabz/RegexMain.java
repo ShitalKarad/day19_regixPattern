@@ -5,5 +5,6 @@ public class RegexMain {
         Regex regex = new Regex();
         regex.validFirstName();
         regex.validLastName();
+        regex.validEmail();
     }
 }
