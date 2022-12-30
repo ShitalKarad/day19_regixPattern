@@ -7,5 +7,8 @@ public class RegexMain {
         regex.validLastName();
         regex.validEmail();
         regex.validContactNumber();
+        regex.validPasswordRule1();
+
     }
+
 }
